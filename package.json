@@ -1,0 +1,31 @@
+{
+  "name": "rollup-starter-lib",
+  "version": "1.0.0",
+  "main": "dist/obs-huawei-sdk.cjs.js",
+  "module": "dist/obs-huawei-sdk.esm.js",
+  "browser": "dist/obs-huawei-sdk.umd.js",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "Base64": "^1.1.0",
+    "js-base64": "^3.7.2",
+    "jssha": "^3.2.0",
+    "md5": "^2.3.0",
+    "sha": "^3.0.0",
+    "URI": "npm:uri@^0.1.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "rollup": "^2.66.1",
+    "rollup-plugin-amd": "^4.0.0"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "node test/test.js",
+    "pretest": "npm run build"
+  },
+  "files": [
+    "dist"
+  ]
+}
