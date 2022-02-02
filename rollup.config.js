@@ -1,6 +1,5 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import amd from 'rollup-plugin-amd';
 import pkg from './package.json';
 
 export default [
@@ -9,18 +8,12 @@ export default [
 		input: 'src/obs.js',
 		output: {
 			name: 'howLongUntilLunch',
-			file: pkg.module,
-			format: 'es'
+			file: pkg.browser,
+			format: 'umd'
 		},
 		plugins: [
 			// resolve(), // so Rollup can find `ms`
-			// commonjs(), // so Rollup can convert `ms` to an ES module
-			amd({
-				// exclude: [ 'node_modules/**' ], 
-				// rewire: function(moduleId) {
-				// 	return 'src/' + moduleId;
-				// }
-			}),
+			// commonjs(), // so Rollup can convert `ms` to an ES module				
 		]
 	},
 
@@ -30,12 +23,12 @@ export default [
 	// builds from a single configuration where possible, using
 	// an array for the `output` option, where we can specify
 	// `file` and `format` for each target)
-	// {
-	// 	input: 'src/obs.js',
-	// 	external: ['ms'],
-	// 	output: [
-	// 		{ file: pkg.main, format: 'cjs' },
-	// 		{ file: pkg.module, format: 'es' }
-	// 	]
-	// }
+	{
+		input: 'src/obs.js',
+		external: ['ms'],
+		output: [
+			{ file: pkg.main, format: 'cjs' },
+			{ file: pkg.module, format: 'es' }
+		]
+	}
 ];

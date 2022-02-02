@@ -5,19 +5,17 @@
   "module": "dist/obs-huawei-sdk.esm.js",
   "browser": "dist/obs-huawei-sdk.umd.js",
   "dependencies": {
+    "@xmldom/xmldom": "^0.8.0",
     "axios": "^0.25.0",
-    "Base64": "^1.1.0",
+    "blueimp-md5": "^2.19.0",
     "js-base64": "^3.7.2",
     "jssha": "^3.2.0",
-    "md5": "^2.3.0",
-    "sha": "^3.0.0",
-    "URI": "npm:uri@^0.1.0"
+    "urijs": "^1.19.7"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.1",
     "@rollup/plugin-node-resolve": "^7.0.0",
-    "rollup": "^2.66.1",
-    "rollup-plugin-amd": "^4.0.0"
+    "rollup": "^2.66.1"
   },
   "scripts": {
     "build": "rollup -c",
@@ -27,5 +25,11 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
+  }
 }
